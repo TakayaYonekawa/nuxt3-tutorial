@@ -1,7 +1,4 @@
 <template>
-    <div>
-        <h1>Top Page</h1>
-        <hr>
-        <NuxtLink to="/price">Price</NuxtLink>
-    </div>
+    <h1>TOP</h1>
+    <NuxtLink to="mypage">mypage</NuxtLink>
 </template>
