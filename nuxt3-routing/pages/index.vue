@@ -1,5 +1,5 @@
 <template>
     <div>
-        <h1>index</h1>
+        <h1>TOP</h1>
     </div>
 </template>
