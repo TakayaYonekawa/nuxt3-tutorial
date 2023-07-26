@@ -1,10 +1,12 @@
 <template>
   <div>
-    {{title}}
+    <h1>{{title}}</h1>
+    <button @click="$event => titleState.changeTitle('Hello Nuxt3!')">changeTitle</button>
   </div>
 
 </template>
 
 <script setup>
-  const title = useTitle()
+  const titleState = useTitle()
+  const {title} = titleState
 </script>
