@@ -6,12 +6,12 @@
       <button>Add</button>
     </form>
     <ul>
-      <li v-for="(task) in tasks" key="task">
+      <li v-for="(task,index) in tasks" key="task">
         <span>{{task}}</span>
-        <button>Delete</button>
+        <button @click="deleteTask(index)">Delete</button>
       </li>
     </ul>
-    <button>Clear</button>
+    <button @click="clearTask">Clear</button>
   </div>
 </template>
 
@@ -29,4 +29,11 @@
     }
     newTask.value = ''
   }
+  function deleteTask(index) {
+    tasks.value.splice(index,1)
+    }
+
+    function clearTask() {
+      tasks.value = []
+      }
 </script>
