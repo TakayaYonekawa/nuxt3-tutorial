@@ -1,14 +1,8 @@
 <template>
-  <div>
-    count:{{}}
-
-    <button >+</button>
-    <button >-</button>
-    <button >Reset</button>
-  </div>
+  
 </template>
 
+<script>
 
-<script setup>
 
 </script>
