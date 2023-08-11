@@ -1,20 +1,43 @@
 <template>
       <div>
-      <form >
-        <input  autocomplete="off" type="text"/>
+      <form @submit.prevent="addTask">
+        <input v-model="newTask" autocomplete="off" type="text"/>
         <button>Add</button>
       </form>
       <ul>
-        <li  key="task">
-          <span>{{}}</span>
-          <button >Delete</button>
+        <li v-for="(task, index) in tasks" key="task">
+          <span>{{task}}</span>
+          <button @click="deleteTask(index)">Delete</button>
         </li>
       </ul>
-      <button >Clear</button>
+      <button @click="clearTask">Clear</button>
     </div>
 </template>
 
-<script>
+<script setup>
+const tasks = useCookie(
+  'tasks',
+  {
+    default: () => []
+  }
+)
+
+const newTask = ref('');
+
+function addTask(){
+  if(newTask.value.length >= 1){
+    tasks.value.push(newTask.value)
+  }
+  newTask.value = ''
+}
+
+function deleteTask(index){
+  tasks.value.splice(index, 1)
+}
+
+function clearTask(){
+  tasks.value = []
+}
 
 
 </script>
