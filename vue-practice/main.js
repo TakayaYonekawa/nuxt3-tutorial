@@ -1,13 +1,8 @@
 const app = Vue.createApp({
     data: () => ({
-        now: '-'
+        message: 'HelloVue.js!'
     }),
-    methods: {
-        onClick: function(){
-            // console.log('onClick');
-            this.now = new Date().toLocaleString()
-        }
-    }
+
 
 
 }).mount('#app')
