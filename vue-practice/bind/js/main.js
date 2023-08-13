@@ -1,8 +1,7 @@
 const app = Vue.createApp({
     data: () => ({
-        message: 'Hello Vue.js',
-        number: 100,
-        ok: true
+       url: 'https://www.udemy.com/course/learn-vuejs/learn/lecture/28893148#overview'
+
     }),
     methods: {
 
