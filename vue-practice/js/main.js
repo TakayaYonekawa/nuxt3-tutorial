@@ -11,6 +11,7 @@ const app = Vue.createApp({
                 item: this.newItem
             }
             this.todos.push(todo)
+            this.newItem = ''
         }
     }
 })
