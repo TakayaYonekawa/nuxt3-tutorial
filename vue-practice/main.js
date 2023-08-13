@@ -1,12 +1,13 @@
 const app = Vue.createApp({
     data: () => ({
-        user: {
-            firstName: 'Taro',
-            lastName: 'Yamada',
-            age: 23
+        now: '-'
+    }),
+    methods: {
+        onClick: function(){
+            // console.log('onClick');
+            this.now = new Date().toLocaleString()
         }
-
-    })
+    }
 
 
 }).mount('#app')
