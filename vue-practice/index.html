@@ -8,9 +8,11 @@
 </head>
 <body>
     <div id="app">
-        <ol>
-            <li v-for="color in colors">{{color}}</li>
-        </ol>
+        <ul>
+            <!-- <li v-for="value in user">{{value}}</li> -->
+            <!-- <li v-for="(value, key) in user">{{key}}:{{value}}</li> -->
+            <li v-for="(v, k) in user">{{k}}:{{v}}</li>
+        </ul>
     </div>
 
     <script src="https://unpkg.com/vue@3.1.5"></script>
