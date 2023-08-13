@@ -8,7 +8,9 @@
 </head>
 <body>
     <div id="app">
-        <p v-if="toggle">Hello</p>
+        <ol>
+            <li v-for="color in colors">{{color}}</li>
+        </ol>
     </div>
 
     <script src="https://unpkg.com/vue@3.1.5"></script>
