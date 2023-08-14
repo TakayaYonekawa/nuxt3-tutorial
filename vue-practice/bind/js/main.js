@@ -1,19 +1,17 @@
 const app = Vue.createApp({
     data: () => ({
-        basePrice: 100
+        message: 'hello'
     }),
     computed: {
-        taxincludedPrice: {
-            get:function(){
-                return this.basePrice * 1.1
-            },
-            set: function(value){
-                this.basePrice = value / 1.1
-            }
-        }
+
     },
     methods: {
 
+    },
+    watch:{
+        message: function(newValue, oldValue){
+            console.log('new: %s, old: %s', newValue, oldValue);
+        }
     }
 })
 
