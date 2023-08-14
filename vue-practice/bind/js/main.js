@@ -23,19 +23,29 @@
 
 const app = Vue.createApp({
     data: () => ({
-        firstName: '',
-        lastName: '',
+        colors: [
+            {name: 'Red'},
+            {name: 'Green'},
+            {name: 'Blue'},
+            
+        ]
     }),
     computed: {
-        fullName: function(){
-            return this.firstName + ' ' + this.lastName
-        }
+
         
     },
     methods: {
+        onClick:function(event){
+            this.colors[1].name = 'White'
+        }
     },
     watch:{
-        
+        colors: {
+            handler: function(newValue, oldValue){
+                console.log('Update!');
+            },
+            deep:true
+        },
 
 
     }
