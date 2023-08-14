@@ -7,11 +7,16 @@ const app = Vue.createApp({
         message: '',
     }),
     watch:{
-
+        keyword: function(newKeyword, oldKeyword){
+            console.log(newKeyword);
+            this.message = 'Wating for you to stop typing...'
+            this.debouncedGetAnswer()
+        }
     },
     mounted: function(){
-        this.keyword = 'JavaScript'
-        this.getAnswer()
+        // this.keyword = 'JavaScript'
+        // this.getAnswer()
+        this.debouncedGetAnswer = _.debounce(this.getAnswer, 1000)
     },
     methods: {
         getAnswer: function(){
