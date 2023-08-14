@@ -1,10 +1,11 @@
 const app = Vue.createApp({
     data: () => ({
-       url: 'https://www.udemy.com/course/learn-vuejs/learn/lecture/28893148#overview'
-
+        message: 'Hello Vue.js'
     }),
-    methods: {
-
+    computed: {
+        reversedMessage: function(){
+            return this.message.split('').reverse().join('')
+        }
     }
 })
 
