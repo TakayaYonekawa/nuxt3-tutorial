@@ -1,54 +1,40 @@
-// const app = Vue.createApp({
-//     data: () => ({
-//         firstName: '',
-//         lastName: '',
-//         fullName:''
-//     }),
-//     computed: {
-        
-//     },
-//     methods: {
-//     },
-//     watch:{
-        
-//         firstName: function(value){
-//             this.fullName = value + ' ' + this.lastName
-//         },
-//         lastName: function(value){
-//             this.fullName = this.firstName + ' ' + value
-//         }
 
-//     }
-// })
 
 const app = Vue.createApp({
     data: () => ({
-        colors: [
-            {name: 'Red'},
-            {name: 'Green'},
-            {name: 'Blue'},
-            
-        ]
+        items: null,
+        keyword: '',
+        message: '',
     }),
-    computed: {
+    watch:{
 
-        
+    },
+    mounted: function(){
+        this.keyword = 'JavaScript'
+        this.getAnswer()
     },
     methods: {
-        onClick:function(event){
-            this.colors[1].name = 'White'
+        getAnswer: function(){
+            if(this.keyword === ''){
+                console.log('karamoji');
+                this.items = null
+                return
+            }
+
+            this.message = 'Lading...'
+            const vm = this
+            const params = {page: 1, perpage: 20, querry: this.keyword}
+            axios.get('https://qiita.com/api/v2/items', {params}).then(function(response){
+                // console.log(response);
+                vm.items = response.data
+            }).catch(function(error){
+                vm.message = 'Error!' + error
+            }).finally(function(){
+                vm.message = ''
+            })
         }
-    },
-    watch:{
-        colors: {
-            handler: function(newValue, oldValue){
-                console.log('Update!');
-            },
-            deep:true
-        },
-
-
-    }
+    } 
+        
 })
 
 
