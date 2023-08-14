@@ -26,7 +26,7 @@ const app = Vue.createApp({
                 return
             }
 
-            this.message = 'Lading...'
+            this.message = 'Loading...'
             const vm = this
             const params = {page: 1, perpage: 20, querry: this.keyword}
             axios.get('https://qiita.com/api/v2/items', {params}).then(function(response){
