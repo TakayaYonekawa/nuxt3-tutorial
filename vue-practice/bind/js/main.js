@@ -2,7 +2,7 @@
 
 const app = Vue.createApp({
     data: () => ({
-        message: '',
+        age: 0
     }),
     methods: {
 

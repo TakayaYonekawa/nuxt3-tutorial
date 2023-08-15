@@ -8,9 +8,8 @@
 </head>
 <body>
     <div id="app">
-        <input type="text" v-model.trim="message"><br>
-        <input type="text" v-model="message">
-        <pre>{{ $data }}</pre>
+        <input type="number" v-model.number="age">
+        <p>{{ age + 10}}</p>
     </div>
 
     <script src="https://unpkg.com/vue@3.1.5"></script>
