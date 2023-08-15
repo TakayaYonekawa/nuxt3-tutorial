@@ -3,7 +3,7 @@
 const app = Vue.createApp({
     data: () => ({
         isLarge: true,
-        hasError: false
+        hasError: true
 
     }),
     watch:{
