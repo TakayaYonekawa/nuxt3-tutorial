@@ -2,10 +2,7 @@
 
 const app = Vue.createApp({
     data: () => ({
-        styleObject: {
-            color: 'red',
-            fontSize: '48px'
-        }
+        toggle: true
     }),
     watch:{
 
