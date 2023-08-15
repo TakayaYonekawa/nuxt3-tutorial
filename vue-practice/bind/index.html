@@ -8,7 +8,9 @@
 </head>
 <body>
     <div id="app">
-        <p>Hello <span :style="{color: color, fontSize: fontSize + 'px'}">Vue.js</span></p>
+        <p>
+            Hello <span :style="styleObject">Vue.js</span>
+        </p>
     </div>
 
     <script src="https://unpkg.com/vue@3.1.5"></script>
