@@ -8,8 +8,10 @@
 </head>
 <body>
     <div id="app">
-        <input type="text" v-model="message" value="vsd;uhgrb;o">
-        <p>{{$data}}</p>
+        <p>{{ message }}</p>
+        <!-- <textarea>{{ message }}</textarea> -->
+        <textarea v-model="message"></textarea>
+        
     </div>
 
     <script src="https://unpkg.com/vue@3.1.5"></script>
