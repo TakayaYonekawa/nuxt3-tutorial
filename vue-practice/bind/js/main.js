@@ -2,8 +2,10 @@
 
 const app = Vue.createApp({
     data: () => ({
-        largeClass: 'large',
-        dangerClass: 'text-denger'
+        classObject:{
+            large: true,
+            'text-danger': true
+        }
     }),
     watch:{
 
