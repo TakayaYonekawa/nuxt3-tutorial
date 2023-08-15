@@ -8,7 +8,7 @@
 </head>
 <body>
     <div id="app">
-        <button v-on:click="clickHandler($event ,'Vue.js')" >click</button>
+        <button @click.once="clickHandler">Now</button>
         <p>{{message}}</p>
     </div>
 

@@ -2,14 +2,12 @@
 
 const app = Vue.createApp({
     data: () => ({
-        message: ''
+        message: '',
     }),
     methods: {
-        clickHandler: function($event, message){
-            this.message = message
-            console.log($event);
+        clickHandler: function(){
+            this.message = new Date().toLocaleTimeString()
         }
-            
     },
     watch:{
 
