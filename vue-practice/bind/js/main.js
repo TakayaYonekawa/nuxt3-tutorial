@@ -2,7 +2,7 @@
 
 const app = Vue.createApp({
     data: () => ({
-        checked: false,
+        colors: []
     }),
     methods: {
 
