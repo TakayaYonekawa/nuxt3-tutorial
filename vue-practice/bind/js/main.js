@@ -2,7 +2,8 @@
 
 const app = Vue.createApp({
     data: () => ({
-        isLarge: true
+        isLarge: true,
+        hasError: false
 
     }),
     watch:{
