@@ -8,9 +8,10 @@
 </head>
 <body>
     <div id="app">
-        <button-counter></button-counter>
-        <button-counter></button-counter>
-        <button-counter></button-counter>
+        <button @click="show = !show">Change</button>
+        <transition name="fade">
+            <p v-show="show">Hello Transition</p>
+        </transition>
     </div>
 
     <script src="https://unpkg.com/vue@3.1.5"></script>
