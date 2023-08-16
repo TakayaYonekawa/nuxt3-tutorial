@@ -10,16 +10,17 @@
 <body>
   <div id="app">
     <h2>TODO List</h2>
-    <form >
-      <input type="text">
+    <form @submit.prevent="addTodo">
+      <input type="text" v-model="newItem">
       <button  >Add</button>
     </form>
     <ul>
-      <li >
-        <input type="checkbox" >
-        <span >
+      <li v-for="(todo, index) in todos">
+        <input type="checkbox" v-model="todo.isDone">
+        <span :class="{done: todo.isDone}">
+            {{ todo.item }}
         </span>
-        <button >
+        <button @click="deleteTodo(index)">
           Delete
         </button>
       </li>
