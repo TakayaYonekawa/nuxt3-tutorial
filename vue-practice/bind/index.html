@@ -10,15 +10,16 @@
     <div id="app">
         <h2>TODO List</h2>
         <form v-on:submit.prevent>
-          <input type="text" >
-          <button >Add</button>
+          <input type="text" v-model='newTodo'>
+          <button @click="addTodo">Add</button>
         </form>
         <ul>
           <li v-for="(todo, index) in todos">
-            <input type="checkbox" >
-            <span :class="">
+            <input type="checkbox" v-model="todo.isDone">
+            <span :class="{done: todo.isDone}">
+              {{todo.item}}
             </span>
-            <button >
+            <button @click="deleteTodo(index)">
               Delete
             </button>
           </li>
