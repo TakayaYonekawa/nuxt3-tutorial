@@ -1,24 +1,36 @@
 const app = Vue.createApp({
-    data: () => ({
-      newItem: '',
+  data: () => ({
+      newTodo: '',
       todos: []
-    }),
-    methods: {
-      addItem: function(event) {
-        // console.log('Clicked!')
-        if(this.newItem === '') return
-        let todo = {
-          item: this.newItem,
-          isDone: false
-        }
-        this.todos.push(todo)
-        this.newItem = ''
+      
+  }),
+  watch:{
+
+  },
+  mounted: function(){
+      this.todos = JSON.parse(localStorage.getItem('todos'))
+      if(!this.todos){this.todos = []}
+  },
+  methods: {
+      addTodo: function(event){
+          if(this.newTodo === '') return
+          let todo = {
+              item: this.newTodo,
+              idDone: false
+          }
+          this.todos.push(todo)
+          localStorage.setItem('todos', JSON.stringify(this.todos))
+          this.todos = JSON.parse(localStorage.getItem('todos'))
+          this.newTodo = ''
       },
-      deleteItem: function(index) {
-        // console.log('Delete!')
-        // console.log(index)
-        this.todos.splice(index, 1)
+      deleteTodo: function(index){
+          this.todos.splice(index, 1)
+          localStorage.setItem('todos', JSON.stringify(this.todos))
+
       }
-    }
-  })
-  app.mount('#app')
+  } 
+      
+})
+
+
+app.mount('#app')
